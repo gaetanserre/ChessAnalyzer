@@ -1,6 +1,6 @@
 # ChessAnalyzer
 
-An in-depth chess game analyzer written with Python 3 using Stockfish.
+An in-depth chess game analyzer written with Python 3 using Stockfish engine.
 
 # Requirements
 - [Pygame](https://pypi.org/project/pygame/)
@@ -40,4 +40,4 @@ On this screenshot, white has played f3e4, which is a mistake because it gives m
 The best move was c3d2 with a score of -3165.
 
 # License
-GNU v3
+[GNU v3](https://choosealicense.com/licenses/gpl-3.0/)
