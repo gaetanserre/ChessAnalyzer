@@ -1,6 +1,6 @@
 # ChessAnalyzer
 
-An in-depth chess game analyzer written with Python 3 using Stockfish.
+An in-depth chess game analyzer written with Python 3 using Stockfish engine.
 
 # Requirements
 - [Pygame](https://pypi.org/project/pygame/)
