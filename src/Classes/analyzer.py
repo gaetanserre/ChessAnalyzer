@@ -10,7 +10,7 @@ OKGREEN = '\033[92m'
 ENDC = '\033[0m'
 
 class Analyzer():
-    def __init__ (self, gamefile, depth):
+    def __init__ (self, gamefile, depth, pos):
         pg.init()
         self.screen = pg.display.set_mode((520, 520))
         pg.display.set_caption("Python Chess Analyzer")
@@ -33,11 +33,11 @@ class Analyzer():
         print(OKCYAN+"Blue"+ENDC+" means best move")
         print("\n\n")
         
-        self.run()
+        self.run(pos)
 
 
-    def run(self):
-        board = Board(self.screen, self.depth)
+    def run(self, pos):
+        board = Board(self.screen, self.depth, pos)
 
         print("Starting the in-depth analysis.. (depth = {})".format(self.depth))
         start = time.time()
@@ -71,5 +71,8 @@ class Analyzer():
 
                     if event.key == pg.K_p:
                         board.printMoves()
+
+                    if event.key == pg.K_v:
+                        board.playVariant()
                     
         pg.quit()

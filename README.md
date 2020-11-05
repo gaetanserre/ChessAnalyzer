@@ -9,11 +9,12 @@ An in-depth chess game analyzer written with Python 3 using Stockfish.
 Run `pip3 install -r requirements.txt`
 
 # Usage 
-Run `python3 src/ChessAnalyzer.py gamefile [depth]`
+Run `python3 src/ChessAnalyzer.py gamefile [b/w] [depth]`
 
-Default depth is 18
+- [n/w] is for the position of the chessboard: w means white at the bottom, b means black at the bottom.
+- Default depth is 18.
 
-Works with Windows, MacOs and Linux
+Works with Windows, MacOs and Linux.
 
 gamefile is :
 - A PGN file (.pgn or .txt)

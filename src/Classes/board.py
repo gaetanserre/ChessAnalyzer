@@ -15,7 +15,7 @@ OFFSET = 20
 SIZE = 60
 
 class Board ():
-    def __init__  (self, screen, depth):
+    def __init__  (self, screen, depth, pos):
         self.screen = screen
 
         self.B_KING = pg.image.load(dir_images+'BlackKing.png')
@@ -42,7 +42,7 @@ class Board ():
         self.move_sound = pg.mixer.Sound(dir_sounds+"move.wav")
         self.finished_analyze = pg.mixer.Sound(dir_sounds+"success.wav")
 
-        self.actualBoard = "white"
+        self.actualBoard = pos
         self.algo_board = ce.chess.Board()
         self.board = []
         self.FenToBoard()
