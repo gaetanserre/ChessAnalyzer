@@ -247,13 +247,33 @@ class Board ():
 
         game = chess.pgn.read_game(pgn)
         pgn.close()
+
+        w_bm, w_e, b_bm, b_e, count = (0, 0, 0, 0, 0)
+
+
         for move in game.mainline_moves():
-            self.moves.append(self.IA.compareMove(str(move), self.algo_board))
+            move, best, state = self.IA.compareMove(str(move), self.algo_board)
+            if count % 2 == 0:
+                if state == 'E':
+                    w_e += 1
+                elif state == 'P':
+                    w_bm += 1
+            else:
+                if state == 'E':
+                    b_e += 1
+                elif state == 'P':
+                    b_bm += 1
+            count += 1
+
+            self.moves.append((move, best, state))
 
             self.makeMove(str(move), sound=False)
             self.drawBoard()
+            
         self.analyze = False
         self.finished_analyze.play()
+
+        return (w_e, w_bm, b_e, b_bm)
 
 
 

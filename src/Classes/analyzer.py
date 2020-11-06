@@ -29,7 +29,7 @@ class Analyzer():
         print("At each move, you will see two highlighted moves.")
         print("One of the moves is the one that has just been played, the second is the best one that could have been played.")
 
-        print(FAIL+"Red"+ENDC+" means really bad move.")
+        print(FAIL+"Red"+ENDC+" means blunder.")
         print(ORANGE+"Orange"+ENDC+" means bad move.")
         print(OKGREEN+"Green"+ENDC+" means good move.")
         print(OKCYAN+"Blue"+ENDC+" means best move.")
@@ -45,11 +45,13 @@ class Analyzer():
         start = time.time()
 
         if self.type == "pgn":
-            board.analyzePGN(self.gamefile)
+            w_e, w_bm, b_e, b_bm = board.analyzePGN(self.gamefile)
+            print("White : "+FAIL+"{}".format(w_e) + " blunder(s) " + ENDC + ORANGE + "{}".format(w_bm) + " bad move(s)." + ENDC)
+            print("Black : "+FAIL+"{}".format(b_e) + " blunder(s) " + ENDC + ORANGE + "{}".format(b_bm) + " bad move(s)." + ENDC)
+            print("Done in {:.3f} seconds\n\n".format(time.time() - start))
+
         else:
             board.analyzeFEN(self.gamefile)
-
-        print("Done in {:.3f} seconds\n\n".format(time.time() - start))
 
         running = True
 
