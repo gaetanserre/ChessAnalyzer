@@ -8,7 +8,7 @@ POS = "white"
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or len(sys.argv) > 4:
-        print("[ERROR]\nWrong arguments : Usage python3 ChessAnalyzer.py gamefile [b/w] [depth]")
+        print("[ERROR]\nWrong arguments : Usage python3 ChessAnalyzer.py gamefile [b] [depth]")
         sys.exit()
 
 
