@@ -280,7 +280,7 @@ class Board ():
 
     def printMoves(self):
         try:
-            actual_move, best_move, d = self.moves.pop()
+            actual_move, best_move, d = self.moves[-1]
             self.algo_board.pop()
 
             actual_score = self.IA.getScore(ce.chess.Move.from_uci(actual_move), self.algo_board)
@@ -289,7 +289,6 @@ class Board ():
             print("Score for move {} : {}".format(actual_move, actual_score))
             print("Score for best move {} : {}\n".format(best_move, best_score))
 
-            self.moves.append((actual_move, best_move, d))
             self.makeMove(actual_move, sound=False)
             
         except:
