@@ -58,6 +58,7 @@ class Analyzer():
                     if event.key == pg.K_q or event.key == pg.K_ESCAPE:
                         running = False
                         board.quitAI()
+
                     if event.key == pg.K_r:
                         board.rotateBoard()
                     
@@ -70,9 +71,5 @@ class Analyzer():
                         board.pushBackRemovedMove()
 
                     if event.key == pg.K_p:
-                        board.printMoves()
-
-                    if event.key == pg.K_v:
-                        board.playVariant()
-                    
+                        board.printMoves()                    
         pg.quit()
