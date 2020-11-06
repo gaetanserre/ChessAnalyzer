@@ -60,8 +60,10 @@ class AI():
         else :
             dist = abs(score_best_move) / abs(score_move)
 
-        if dist > 0.5:
+        if dist > 0.7:
             return (str(move), best_move, "G")
+        elif dist > 0.5:
+            return (str(move), best_move, "P")
         else:
             return (str(move), best_move, "E")
 

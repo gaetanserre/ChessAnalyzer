@@ -106,6 +106,7 @@ class Board ():
         BLUE = (0, 255, 255, 100)
         GREEN = (0, 255, 0, 100)
         RED = (255, 0, 0, 100)
+        ORANGE = (255, 165, 0)
             
 
         def convertAlgToCase(case, reverse=False):
@@ -132,6 +133,8 @@ class Board ():
                 case.fill(GREEN)
             elif color == "E":
                 case.fill(RED)
+            elif color == "P":
+                case.fill(ORANGE)
             else:
                 case.fill(BLUE)
 

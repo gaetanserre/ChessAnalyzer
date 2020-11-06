@@ -7,6 +7,7 @@ import time
 FAIL = '\033[91m'
 OKCYAN = '\033[96m'
 OKGREEN = '\033[92m'
+ORANGE = '\033[33m'
 ENDC = '\033[0m'
 
 class Analyzer():
@@ -28,9 +29,10 @@ class Analyzer():
         print("At each move, you will see two highlighted moves.")
         print("One of the moves is the one that has just been played, the second is the best one that could have been played.")
 
-        print(FAIL+"Red"+ENDC+" means bad move")
-        print(OKGREEN+"Green"+ENDC+" means good move")
-        print(OKCYAN+"Blue"+ENDC+" means best move")
+        print(FAIL+"Red"+ENDC+" means really bad move.")
+        print(ORANGE+"Orange"+ENDC+" means bad move.")
+        print(OKGREEN+"Green"+ENDC+" means good move.")
+        print(OKCYAN+"Blue"+ENDC+" means best move.")
         print("\n\n")
         
         self.run(pos)
