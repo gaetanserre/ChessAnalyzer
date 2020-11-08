@@ -38,7 +38,6 @@ class AI():
         score_move = self.getScore(chess.Move.from_uci(move), Chessboard)
         score_best_move = self.getScore(chess.Move.from_uci(best_move), Chessboard)
 
-
         if score_best_move[0] == '#' or score_move[0] == '#':    # Case mate in n moves 
             if score_best_move[0] == '#' and score_move[0] == '#':
                 return (str(move), best_move, "G")
