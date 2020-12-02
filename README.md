@@ -36,8 +36,8 @@ The program file show you the best move for this configuration
 # Display example
 ![Example](Images/example.png)
 
-On this screenshot, white has played f3e4, which is a mistake because it gives mate in one move for black.
-The best move was c3d2 with a score of -3165.
+On this screenshot, white has played fxe4, which is a mistake because it gives mate in one move for black.
+The best move was Kd2 with a score of -3165.
 
 # License
 [GNU v3](https://choosealicense.com/licenses/gpl-3.0/)

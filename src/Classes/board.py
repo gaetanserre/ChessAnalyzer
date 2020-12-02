@@ -199,29 +199,6 @@ class Board ():
             return True
         return False
 
-    '''
-    def makeMoveCoord (self, coords):
-        coordX, coordY = coords
-        coordX -= OFFSET
-        coordY -= OFFSET
-
-        if coordY >= 0 and coordY < SIZE*8 and coordX >= 0 and coordX < SIZE*8:
-            coordY = int (coordY / SIZE)
-            coordX = int (coordX / SIZE)
-
-            if self.actualBoard == "white":
-                coordY = 7 - coordY
-            else:
-                coordX = 7 - coordX
-
-            idx = coordX + coordY * 8
-
-            case = ce.chess.SQUARE_NAMES[idx]
-            if not self.selected_case1 or self.selected_case1 == case or not self.makeMove(self.selected_case1 + case):
-
-                 self.selected_case1 = case    
-    '''
-
     def removeMove (self):
         try:
             self.algo_board.pop()
@@ -308,6 +285,10 @@ class Board ():
 
             actual_score = self.IA.getScore(ce.chess.Move.from_uci(actual_move), self.algo_board)
             best_score = self.IA.getScore(ce.chess.Move.from_uci(best_move), self.algo_board)
+
+            actual_move = self.algo_board.san(ce.chess.Move.from_uci(actual_move))
+            best_move = self.algo_board.san(ce.chess.Move.from_uci(best_move))
+
 
             print("Score for move {} : {}".format(actual_move, actual_score))
             print("Score for best move {} : {}\n".format(best_move, best_score))
